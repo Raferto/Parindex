@@ -1,5 +1,6 @@
 <?php
 include('includes/config.php');
+$input= "a";
 ?>
 
 <!DOCTYPE html>
@@ -29,17 +30,36 @@ include('includes/config.php');
 
 	<body>
 		<?php include('includes/header.php');?>
-		<div class="judul">
-			<b>Cari tempat Wisata yang diinginkan</b>
+		<div class="banner-1 ">
+			<div class="container">
+				<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">Cari tempat Wisata yang diinginkan</h1>
+			</div>
 		</div>
+		<?php echo "<br>";?>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			search by:
+			 <select name="input">
+				 <option value="" selected="selected" class="form-control">Select One</option>
+				  <option value="search.php?input=nama">Nama</option>
+				  <option value="search.php?input=kota">Kota</option>
+				  <option value="search.php?input=htm">HTM</option>
+				  <option value="search.php?input=rating">Rating</option>
+				  <option value="search.php?input=hari">Hari</option>
+				  <option value="search.php?input=waktu">Waktu</option>
+				  <option value="search.php?input=tag">Tag</option>
+			 </select>
+		</td>
+		<?php echo "<br>";?>
+		<?php echo "<br>";?>
 
-	<form action="input_aksi.php" method="post" enctype="multipart/form-data">
-		<tr>
-			<td>Nama</td>
-			<td><input type="text" name="nama"></td>
-			<td><input type="submit" value="go"></td>
-		</tr>
-	</form>
+		<?php
+		if($input == "nama"){
+				echo "test";
+		}
+		else {
+			echo $input;
+		}
+		?>
 
 		<?php include('includes/footer.php');?>
 	</body>

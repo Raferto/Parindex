@@ -456,9 +456,9 @@ i.fa.fa-truck,i.fa.fa-user,i.fa.fa-ticket {
 .banner-1 h1 {
     font-size: 50px;
     margin-bottom: 40px;
-    padding: 1.5em 0 0;
-    text-align: center;
-    color: #ffffff;
+    padding: 0em 0 0;
+    text-align: left;
+    color: #FFFFFF;
 }
 .bus-tp P {
     float: left;
@@ -1024,11 +1024,11 @@ a.regist:hover{
 }
 select {
     padding: 4px 5px!important;
-    width: 80%;
+    width: auto%;
     color: #9E9E9E;
-    margin-top: 18px;
+    margin-top: 0px;
     border: 1px solid #464646;
-    padding: 5px 10px;
+    padding: 0px 0px;
     vertical-align: middle;
 }
 .agent-right {
