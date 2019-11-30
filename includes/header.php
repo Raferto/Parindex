@@ -1,8 +1,5 @@
 <div class="top-header">
 	<div class="container">
-		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s">
-			<li class="hm"><a href="admin/index.php">Admin Login</a></li>
-        </ul>
 		<div class="clearfix"></div>
 	</div>
 </div>
