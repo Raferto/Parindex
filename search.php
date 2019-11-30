@@ -30,19 +30,16 @@ include('includes/config.php');
 	<body>
 		<?php include('includes/header.php');?>
 		<div class="judul">
-			<h1>Cari tempat Wisata yang diinginkan</h1>
+			<b>Cari tempat Wisata yang diinginkan</b>
 		</div>
-		<form action="input_aksi.php" method="post" enctype="multipart/form-data">
-			<table>
-			<tr>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Nama</td>
-				<td><input type="text" name="nama"></td>
-			</tr>
-			</table>
-		</form>
+
+	<form action="input_aksi.php" method="post" enctype="multipart/form-data">
+		<tr>
+			<td>Nama</td>
+			<td><input type="text" name="nama"></td>
+			<td><input type="submit" value="go"></td>
+		</tr>
+	</form>
 
 		<?php include('includes/footer.php');?>
 	</body>

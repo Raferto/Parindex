@@ -26,8 +26,8 @@
 						<ul class="nav navbar-nav">
 							<li><a href="index.php">Home</a></li>
 							<li><a href="search.php">Search</a></li>
-							<li><a href="page.php?type=aboutus">About</a></li>
-								<li><a href="page.php?type=contact">Contact Us</a></li>
+							<li><a href="about.php">About</a></li>
+								<li><a href="contact.php">Contact Us</a></li>
 								<div class="clearfix"></div>
 						</ul>
 					</nav>
