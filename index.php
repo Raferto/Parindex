@@ -1,38 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title> Main </title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+<head>
+	<title>Parindex-Main</title>
 
-		<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-		<link href="css/style.css" rel='stylesheet' type='text/css' />
-		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
-		<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-		<link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-		<link href="css/font-awesome.css" rel="stylesheet">
-		<!-- Custom Theme files -->
-		<script src="js/jquery-1.12.0.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<!--animate-->
-		<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
-		<script src="js/wow.min.js"></script>
-			<script>
-				 new WOW().init();
-			</script>
-	</head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+</head>
 
-	<body>
-		<?php include('includes/header.php');?>
-		<div class="banner">
-			<div class="container">
-				<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;"> PARINDEX</h1>
+<body>
+	<!-- header -->
+	<div class="top-header"> </div>
+	<div class="header">
+		<div class="container">
+			<div class="logo wow fadeInDown animated" data-wow-delay=".5s">
+				<a>Par<span>index</span></a>
 			</div>
 		</div>
+	</div>
+	<div id="navbar">
+	  <a class="active" href="index.php">Home</a>
+	  <a href="search.php">Search</a>
+	  <a href="contact.php">Contact</a>
+	</div>
+	<!--- header ---->
+	<script>
+		window.onscroll = function() {myFunction()};
 
+		var navbar = document.getElementById("navbar");
+		var sticky = navbar.offsetTop;
 
-	<?php include('includes/footer.php');?>
-	</body>
+		function myFunction() {
+		  if (window.pageYOffset >= sticky) {
+			navbar.classList.add("sticky")
+		  } else {
+			navbar.classList.remove("sticky");
+		  }
+		}
+	</script>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<!--- footer ---->
+	<div class="copy-right">
+		<div class="container">
+			<p class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">© 2019 Parindex . All Rights Reserved </p>
+		</div>
+	</div>
+	<!--- footer ---->
+
+</body>
+
 
 </html>
