@@ -51,8 +51,6 @@ input[type=submit]:hover {
 	  <a href="contact.php">Contact</a>
 	</div>
 	<!--- header ---->
-
-	<!--- sticky navbar ---->
 	<script>
 		window.onscroll = function() {myFunction()};
 
@@ -67,8 +65,8 @@ input[type=submit]:hover {
 		  }
 		}
 	</script>
-	<!--- sticky navbar ---->
 
+<<<<<<< HEAD
 	<form action="search.php">
 	  <class="select">
 	  	<select name="search">
@@ -84,6 +82,10 @@ input[type=submit]:hover {
 	  <input type="submit">
 	</form>
 	<br>
+=======
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+>>>>>>> parent of bdc2951... update background
 
 	<?php
 		if( isset($_GET["search"])){
