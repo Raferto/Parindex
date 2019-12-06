@@ -6,7 +6,35 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
 </head>
+<style>
+input[type=text], select {
+  width: 15%;
+  padding: 10px 30px;
+  margin: 30px 30px;
+  border: 1.5px solid #ccc;
+  font-size: 20px;
+  font-family: cursive;
+  color: #34ad00;
+}
 
+input[type=submit] {
+  width: 7%;
+  color: white;
+  background-color: #3F84B1;
+  padding: 12px 15px;
+  font-size: 20px;
+  resize: none;
+  border: none;
+  border-radius: 1000px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #3F55B1;
+  color: black;
+}
+
+</style>
 <body>
 	<!-- header -->
 	<div class="top-header"> </div>
@@ -41,15 +69,29 @@
 	</script>
 	<!--- sticky navbar ---->
 
-	<div class="dropdown">
-	  <button class="dropbtn">Dropdown</button>
-	  <div class="dropdown-content">
-	    <a href="#">Link 1</a>
-	    <a href="#">Link 2</a>
-	    <a href="#">Link 3</a>
-	  </div>
-	</div>
+	<form action="search.php">
+	  <class="select">
+	  	<select name="search">
+			<option value="" selected="selected" class="form-control">Select One</option>
+  			<option value="nama">Nama</option>
+  			<option value="kota">Kota</option>
+  			<option value="htm">HTM</option>
+  			<option value="rating">Rating</option>
+  			<option value="hari">Hari</option>
+  			<option value="waktu">Waktu</option>
+  			<option value="tag">Tag</option>
+	  	</select>
+	  <input type="submit">
+	</form>
+	<br>
 
+	<?php
+		if( isset($_GET["search"])){
+			if( $_GET["search"] == "nama"){
+				echo "nama";
+			}
+		}
+	?>
 	<!--- footer ---->
 	<div class="copy-right">
 		<div class="container">
@@ -59,6 +101,4 @@
 	<!--- footer ---->
 
 </body>
-
-
 </html>
