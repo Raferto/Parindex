@@ -40,7 +40,116 @@
 	<?php
 		if( isset($_GET["search"])){
 			if( $_GET["search"] == "nama"){
-				echo "nama";
+				?>
+				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="dropdown" style="margin: 15px 150px">
+					<button class="dropbtn">Nama</button>
+					  <div class="dropdown-content">
+						<a href="search.php?search=kota">Kota</a>
+						<a href="search.php?search=htm">HTM</a>
+						<a href="search.php?search=rating">Rating</a>
+						<a href="search.php?search=hari">Hari</a>
+						<a href="search.php?search=waktu">Waktu</a>
+						<a href="search.php?search=tag">Tag</a>
+					  </div>
+				</div>
+				<?php
+			}
+			else if( $_GET["search"] == "kota"){
+				?>
+				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="dropdown" style="margin: 15px 150px">
+					<button class="dropbtn">Kota</button>
+					  <div class="dropdown-content">
+						<a href="search.php?search=nama">Nama</a>
+						<a href="search.php?search=htm">HTM</a>
+						<a href="search.php?search=rating">Rating</a>
+						<a href="search.php?search=hari">Hari</a>
+						<a href="search.php?search=waktu">Waktu</a>
+						<a href="search.php?search=tag">Tag</a>
+					  </div>
+				</div>
+				<?php
+			}
+			else if( $_GET["search"] == "htm"){
+				?>
+				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="dropdown" style="margin: 15px 150px">
+					<button class="dropbtn">HTM</button>
+					  <div class="dropdown-content">
+						<a href="search.php?search=nama">Nama</a>
+						<a href="search.php?search=kota">Kota</a>
+						<a href="search.php?search=rating">Rating</a>
+						<a href="search.php?search=hari">Hari</a>
+						<a href="search.php?search=waktu">Waktu</a>
+						<a href="search.php?search=tag">Tag</a>
+					  </div>
+				</div>
+				<?php
+			}
+			else if( $_GET["search"] == "rating"){
+				?>
+				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="dropdown" style="margin: 15px 150px">
+					<button class="dropbtn">Rating</button>
+					  <div class="dropdown-content">
+						<a href="search.php?search=nama">Nama</a>
+						<a href="search.php?search=kota">Kota</a>
+						<a href="search.php?search=htm">HTM</a>
+						<a href="search.php?search=hari">Hari</a>
+						<a href="search.php?search=waktu">Waktu</a>
+						<a href="search.php?search=tag">Tag</a>
+					  </div>
+				</div>
+				<?php
+			}
+			else if( $_GET["search"] == "hari"){
+				?>
+				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="dropdown" style="margin: 15px 150px">
+					<button class="dropbtn">Hari</button>
+					  <div class="dropdown-content">
+						<a href="search.php?search=nama">Nama</a>
+						<a href="search.php?search=kota">Kota</a>
+						<a href="search.php?search=htm">HTM</a>
+						<a href="search.php?search=rating">Rating</a>
+						<a href="search.php?search=waktu">Waktu</a>
+						<a href="search.php?search=tag">Tag</a>
+					  </div>
+				</div>
+				<?php
+			}
+			else if( $_GET["search"] == "waktu"){
+				?>
+				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="dropdown" style="margin: 15px 150px">
+					<button class="dropbtn">Waktu</button>
+					  <div class="dropdown-content">
+						<a href="search.php?search=nama">Nama</a>
+						<a href="search.php?search=kota">Kota</a>
+						<a href="search.php?search=htm">HTM</a>
+						<a href="search.php?search=rating">Rating</a>
+						<a href="search.php?search=hari">Hari</a>
+						<a href="search.php?search=tag">Tag</a>
+					  </div>
+				</div>
+				<?php
+			}
+			else if( $_GET["search"] == "tag"){
+				?>
+				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="dropdown" style="margin: 15px 150px">
+					<button class="dropbtn">Tag</button>
+					  <div class="dropdown-content">
+						<a href="search.php?search=nama">Nama</a>
+						<a href="search.php?search=kota">Kota</a>
+						<a href="search.php?search=htm">HTM</a>
+						<a href="search.php?search=rating">Rating</a>
+						<a href="search.php?search=hari">Hari</a>
+						<a href="search.php?search=waktu">Waktu</a>
+					  </div>
+				</div>
+				<?php
 			}
 			else{
 				?>
@@ -56,10 +165,9 @@
 						<a href="search.php?search=hari">Hari</a>
 						<a href="search.php?search=waktu">Waktu</a>
 						<a href="search.php?search=tag">Tag</a>
-						<a href="search.php?search=">Nama</a>
 					  </div>
 				</div>
-				<br><br><br><br><br><br><br><br><br><br><br>;
+				<br><br><br><br><br><br><br><br><br><br><br><br>
 				<?php
 
 			}
@@ -78,10 +186,9 @@
 					<a href="search.php?search=hari">Hari</a>
 					<a href="search.php?search=waktu">Waktu</a>
 					<a href="search.php?search=tag">Tag</a>
-					<a href="search.php?search=">Nama</a>
 				  </div>
 			</div>
-			<br><br><br><br><br><br><br><br><br><br><br>;
+			<br><br><br><br><br><br><br><br><br><br><br><br>
 			<?php
 		}
 	?>
