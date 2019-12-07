@@ -53,6 +53,12 @@
 						<a href="search.php?search=tag">Tag</a>
 					  </div>
 				</div>
+
+				<form action="sNama.php" method="post">
+				  	<input type="text" name="cari" placeholder="Masukan Nama Tempat">
+				</form>
+
+				<br><br><br><br><br><br><br><br><br><br><br>
 				<?php
 			}
 			else if( $_GET["search"] == "kota"){
@@ -154,7 +160,7 @@
 			else{
 				?>
 				<img src="css/image/2.png" alt="search" style="width:300px;height:300px;margin:50px 100px; position: absolute" >
-				<div class="text"> <p id="text">Search by:</p> </div>
+				<div class="text2"> <p id="text">Search by:</p> </div>
 				<div class="dropdown" style="margin: 60px 550px">
 					<button class="dropbtn">select one</button>
 					  <div class="dropdown-content">
@@ -175,7 +181,7 @@
 		else{
 			?>
 			<img src="css/image/2.png" alt="search" style="width:300px;height:300px;margin:50px 100px; position: absolute" >
-			<div class="text"> <p id="text">Search by:</p> </div>
+			<div class="text2"> <p id="text">Search by:</p> </div>
 			<div class="dropdown" style="margin: 60px 550px">
 				<button class="dropbtn">select one</button>
 				  <div class="dropdown-content">
