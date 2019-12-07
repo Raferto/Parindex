@@ -6,35 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
 </head>
-<style>
-input[type=text], select {
-  width: 15%;
-  padding: 10px 30px;
-  margin: 30px 30px;
-  border: 1.5px solid #ccc;
-  font-size: 20px;
-  font-family: cursive;
-  color: #34ad00;
-}
 
-input[type=submit] {
-  width: 7%;
-  color: white;
-  background-color: #3F84B1;
-  padding: 12px 15px;
-  font-size: 20px;
-  resize: none;
-  border: none;
-  border-radius: 1000px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #3F55B1;
-  color: black;
-}
-
-</style>
 <body>
 	<!-- header -->
 	<div class="top-header"> </div>
@@ -65,33 +37,52 @@ input[type=submit]:hover {
 		  }
 		}
 	</script>
-
-<<<<<<< HEAD
-	<form action="search.php">
-	  <class="select">
-	  	<select name="search">
-			<option value="" selected="selected" class="form-control">Select One</option>
-  			<option value="nama">Nama</option>
-  			<option value="kota">Kota</option>
-  			<option value="htm">HTM</option>
-  			<option value="rating">Rating</option>
-  			<option value="hari">Hari</option>
-  			<option value="waktu">Waktu</option>
-  			<option value="tag">Tag</option>
-	  	</select>
-	  <input type="submit">
-	</form>
-	<br>
-=======
-
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
->>>>>>> parent of bdc2951... update background
-
 	<?php
 		if( isset($_GET["search"])){
 			if( $_GET["search"] == "nama"){
 				echo "nama";
 			}
+			else{
+				?>
+				<img src="css/image/2.png" alt="search" style="width:300px;height:300px;margin:50px 100px; position: absolute" >
+				<div class="text"> <p id="text">Search by:</p> </div>
+				<div class="dropdown" style="margin: 60px 550px">
+					<button class="dropbtn">select one</button>
+					  <div class="dropdown-content">
+					    <a href="search.php?search=nama">Nama</a>
+						<a href="search.php?search=kota">Kota</a>
+						<a href="search.php?search=htm">HTM</a>
+						<a href="search.php?search=rating">Rating</a>
+						<a href="search.php?search=hari">Hari</a>
+						<a href="search.php?search=waktu">Waktu</a>
+						<a href="search.php?search=tag">Tag</a>
+						<a href="search.php?search=">Nama</a>
+					  </div>
+				</div>
+				<br><br><br><br><br><br><br><br><br><br><br>;
+				<?php
+
+			}
+		}
+		else{
+			?>
+			<img src="css/image/2.png" alt="search" style="width:300px;height:300px;margin:50px 100px; position: absolute" >
+			<div class="text"> <p id="text">Search by:</p> </div>
+			<div class="dropdown" style="margin: 60px 550px">
+				<button class="dropbtn">select one</button>
+				  <div class="dropdown-content">
+					<a href="search.php?search=nama">Nama</a>
+					<a href="search.php?search=kota">Kota</a>
+					<a href="search.php?search=htm">HTM</a>
+					<a href="search.php?search=rating">Rating</a>
+					<a href="search.php?search=hari">Hari</a>
+					<a href="search.php?search=waktu">Waktu</a>
+					<a href="search.php?search=tag">Tag</a>
+					<a href="search.php?search=">Nama</a>
+				  </div>
+			</div>
+			<br><br><br><br><br><br><br><br><br><br><br>;
+			<?php
 		}
 	?>
 	<!--- footer ---->
