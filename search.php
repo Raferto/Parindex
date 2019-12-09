@@ -41,7 +41,7 @@
 		if( isset($_GET["search"])){
 			if( $_GET["search"] == "nama"){
 				?>
-				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="text1"> <p id="text1">Cari Berdasarkan :</p> </div>
 				<div class="dropdown" style="margin: 15px 150px">
 					<button class="dropbtn">Nama</button>
 					  <div class="dropdown-content">
@@ -55,15 +55,15 @@
 				</div>
 
 				<form action="sNama.php" method="post">
-				  	<input type="text" name="cari" placeholder="Masukan Nama Tempat">
+				  	<input style="background-image: url('css/image/1.png'); background-size: 40px; background-repeat: no-repeat;"
+					type="text" name="cari" placeholder="Masukan Nama Tempat">
 				</form>
 
-				<br><br><br><br><br><br><br><br><br><br><br>
 				<?php
 			}
 			else if( $_GET["search"] == "kota"){
 				?>
-				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="text1"> <p id="text1">Cari Berdasarkan :</p> </div>
 				<div class="dropdown" style="margin: 15px 150px">
 					<button class="dropbtn">Kota</button>
 					  <div class="dropdown-content">
@@ -75,16 +75,17 @@
 						<a href="search.php?search=tag">Tag</a>
 					  </div>
 				</div>
+				
 				<form action="sNama.php" method="post">
-					<input type="text" name="cari" placeholder="Masukan Nama Kota">
+					<input style="background-image: url('css/image/1.png'); background-size: 40px; background-repeat: no-repeat;"
+					type="text" name="cari" placeholder="Masukan Nama Kota">
 				</form>
 
-				<br><br><br><br><br><br><br><br><br><br><br>
 				<?php
 			}
 			else if( $_GET["search"] == "htm"){
 				?>
-				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="text1"> <p id="text1">Cari Berdasarkan :</p> </div>
 				<div class="dropdown" style="margin: 15px 150px">
 					<button class="dropbtn">HTM</button>
 					  <div class="dropdown-content">
@@ -98,16 +99,17 @@
 				</div>
 
 				<form action="sNama.php" method="post">
-					<input type="text" name="cari" placeholder="Masukan Nilai Minimal">
-					<input type="text" name="cari2" placeholder="Masukan Nama maksimal">
+					<input type="text" name="cari" placeholder="Masukan Harga Minimal">
+					<span style='color:grey; font-size: 50px;'>-</span>
+					<input type="text" name="cari2" placeholder="Masukan Harga maksimal">
+					<input type="submit" value="Cari">
 				</form>
 
-				<br><br><br><br><br><br><br><br><br><br><br>
 				<?php
 			}
 			else if( $_GET["search"] == "rating"){
 				?>
-				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="text1"> <p id="text1">Cari Berdasarkan :</p> </div>
 				<div class="dropdown" style="margin: 15px 150px">
 					<button class="dropbtn">Rating</button>
 					  <div class="dropdown-content">
@@ -119,11 +121,17 @@
 						<a href="search.php?search=tag">Tag</a>
 					  </div>
 				</div>
+				<form action="sNama.php" method="post">
+					<input type="text" name="cari" placeholder="Masukan Rating Minimal">
+					<span style='color:grey; font-size: 50px;'>-</span>
+					<input type="text" name="cari2" placeholder="Masukan Rating maksimal">
+					<input type="submit" value="Cari">
+				</form>
 				<?php
 			}
 			else if( $_GET["search"] == "hari"){
 				?>
-				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="text1"> <p id="text1">Cari Berdasarkan :</p> </div>
 				<div class="dropdown" style="margin: 15px 150px">
 					<button class="dropbtn">Hari</button>
 					  <div class="dropdown-content">
@@ -135,11 +143,25 @@
 						<a href="search.php?search=tag">Tag</a>
 					  </div>
 				</div>
+				<br>
+				<div class="dropdown2" style="margin: 15px 150px">
+					<button class="dropbtn2">Pilih Hari</button>
+					  <div class="dropdown2-content">
+						<a href="search.php?cari=senin">Senin</a>
+						<a href="search.php?cari=selasa">Selasa</a>
+						<a href="search.php?cari=rabu">Rabu</a>
+						<a href="search.php?cari=kamis">Kamis</a>
+						<a href="search.php?cari=jumat">Jumat</a>
+						<a href="search.php?cari=sabtu">Sabtu</a>
+						<a href="search.php?cari=Minggu">Minggu</a>
+					  </div>
+				</div>
+				
 				<?php
 			}
 			else if( $_GET["search"] == "waktu"){
 				?>
-				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="text1"> <p id="text1">Cari Berdasarkan :</p> </div>
 				<div class="dropdown" style="margin: 15px 150px">
 					<button class="dropbtn">Waktu</button>
 					  <div class="dropdown-content">
@@ -151,11 +173,18 @@
 						<a href="search.php?search=tag">Tag</a>
 					  </div>
 				</div>
+				<form action="sNama.php" method="post">
+					<input type="time" name="cari" placeholder="Masukan Rating Minimal">
+					<span style='color:grey; font-size: 50px;'>-</span>
+					<input type="time" name="cari2" placeholder="Masukan Rating maksimal">
+					<input type="submit" value="Cari">
+				</form>
+				
 				<?php
 			}
 			else if( $_GET["search"] == "tag"){
 				?>
-				<div class="text1"> <p id="text1">Search by :</p> </div>
+				<div class="text1"> <p id="text1">Cari Berdasarkan :</p> </div>
 				<div class="dropdown" style="margin: 15px 150px">
 					<button class="dropbtn">Tag</button>
 					  <div class="dropdown-content">
@@ -167,12 +196,21 @@
 						<a href="search.php?search=waktu">Waktu</a>
 					  </div>
 				</div>
+				
+				<form action="/action_page.php" method="get">
+					&nbsp&nbsp&nbsp Pilih Tag:
+					<br>&nbsp&nbsp&nbsp
+					<button name="subject" type="submit" value="fav_HTML">HTML</button>
+					<button name="subject" type="submit" value="fav_CSS">CSS</button>
+				</form>
+
+				
 				<?php
 			}
 			else{
 				?>
 				<img src="css/image/2.png" alt="search" style="width:300px;height:300px;margin:50px 100px; position: absolute" >
-				<div class="text2"> <p id="text">Search by:</p> </div>
+				<div class="text2"> <p id="text">Cari Berdasarkan:</p> </div>
 				<div class="dropdown" style="margin: 60px 550px">
 					<button class="dropbtn">select one</button>
 					  <div class="dropdown-content">
@@ -193,7 +231,7 @@
 		else{
 			?>
 			<img src="css/image/2.png" alt="search" style="width:300px;height:300px;margin:50px 100px; position: absolute" >
-			<div class="text2"> <p id="text">Search by:</p> </div>
+			<div class="text2"> <p id="text">Cari Berdasarkan:</p> </div>
 			<div class="dropdown" style="margin: 60px 550px">
 				<button class="dropbtn">select one</button>
 				  <div class="dropdown-content">

@@ -146,6 +146,59 @@ body {
 }
 /*-- selectButton --*/
 
+
+/*-- selectButton --*/
+/* Style The Dropdown Button */
+.dropbtn2 {
+  border: 2px solid grey black;
+  padding: 16px;
+  width: 120px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown2-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown2-content a {
+  color: black;
+  padding: 10px; 
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown2-content a:hover {
+	color: Black;
+	background-color: #c0c0c0;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown2:hover .dropdown2-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown2:hover .dropbtn2 {
+  background-color: #cccccc;
+}
+/*-- selectButton --*/
+
+
 /*-- text --*/
 #text2
 {
@@ -180,9 +233,6 @@ input[type=text] {
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
-  /* background-image: url('image/1.png');
-  background-size: 40px;
-  background-repeat: no-repeat; */
   padding: 12px 20px 12px 50px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
@@ -190,6 +240,38 @@ input[type=text] {
 
 input[type=text]:focus {
   padding-left: 50px;
-  width: 40%;
+  width: 30%;
+}
+
+
+input[type=time] {
+  width: 150px;
+  box-sizing: border-box;
+  margin: 20px 50px ;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 20px 12px 50px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+
+input[type=submit] {
+  width: 100px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 2px solid #348d00;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #34ad00;
+  color: white;  
+}
+
+input[type=submit]:hover {
+  background-color: #3F84B1;
+  border: 2px solid #3F74B1;
+  color: black;
 }
 /*-- form --*/
