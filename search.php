@@ -75,6 +75,11 @@
 						<a href="search.php?search=tag">Tag</a>
 					  </div>
 				</div>
+				<form action="sNama.php" method="post">
+					<input type="text" name="cari" placeholder="Masukan Nama Kota">
+				</form>
+
+				<br><br><br><br><br><br><br><br><br><br><br>
 				<?php
 			}
 			else if( $_GET["search"] == "htm"){
@@ -91,6 +96,13 @@
 						<a href="search.php?search=tag">Tag</a>
 					  </div>
 				</div>
+
+				<form action="sNama.php" method="post">
+					<input type="text" name="cari" placeholder="Masukan Nilai Minimal">
+					<input type="text" name="cari2" placeholder="Masukan Nama maksimal">
+				</form>
+
+				<br><br><br><br><br><br><br><br><br><br><br>
 				<?php
 			}
 			else if( $_GET["search"] == "rating"){
@@ -194,7 +206,7 @@
 					<a href="search.php?search=tag">Tag</a>
 				  </div>
 			</div>
-			<br><br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br><br><br><br>
 			<?php
 		}
 	?>

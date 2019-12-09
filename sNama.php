@@ -41,11 +41,11 @@
 	<!--- query ---->
 	<?php
 	$host = mysqli_connect("localhost","root","","parindex");
-	$nama ="";
+	$cari ="";
 
 	if(isset($_POST['cari'])){
-		$nama = $_POST['cari'];
-		echo $nama;
+		$cari = $_POST['cari'];
+		echo $cari;
 	}
 	else{
 		$query_mysql = mysqli_query($host,"SELECT * FROM user")or die(mysql_error());
