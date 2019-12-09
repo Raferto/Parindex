@@ -180,7 +180,9 @@ input[type=text] {
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
+  /* background-image: url('image/1.png');
   background-size: 40px;
+  background-repeat: no-repeat; */
   padding: 12px 20px 12px 50px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
