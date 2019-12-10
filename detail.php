@@ -77,9 +77,77 @@
 
 	$rating="SELECT rating.NAMAPERATING,rating.KOMENTAR,rating.SCORE
 			FROM rating
-			WHERE rating.IDTEMPAT=$id
+			WHERE rating.IDTEMPAT='$id'
 			ORDER BY rating.IDRATING";
 	$queryRating_mysql = mysqli_query($host,$rating);
 	?>
+
+	<table border="1" class="table">
+	<?php
+		$nomor = 1;
+		 ?>
+		<tr>
+			<th>No</th>
+			<th>Fasilitas</th>
+			<th>Biaya</th>
+		</tr>
+		<?php while($fasilitas = mysqli_fetch_array($queryFasilitas_mysql)){
+		?>
+		<tr>
+			<td><?php echo $nomor++; ?></td>
+			<td><?php echo $fasilitas['NAMAFASILITAS']; ?></td>
+			<td><?php echo $fasilitas['BIAYA']; ?></td>
+		</tr>
+		<?php }  ?>
+	</table>
+
+	<br>
+	<br>
+	<br>
+	<table border="1" class="table">
+	<?php
+		$nomor = 1;
+		 ?>
+		<tr>
+			<th>Hari</th>
+			<th>Jam Buka</th>
+			<th>Jam Tutup</th>
+		</tr>
+		<?php while($jadwal = mysqli_fetch_array($queryJadwal_mysql)){
+		?>
+		<tr>
+			<td><?php echo $jadwal['HARI']; ?></td>
+			<td><?php echo $jadwal['JAMBUKA']; ?></td>
+			<td><?php echo $jadwal['JAMTUTUP']; ?></td>
+		</tr>
+		<?php }  ?>
+	</table>
+
+	<br>
+	<br>
+	<br>
+	<table border="1" class="table">
+	<?php
+		$nomor = 1;
+		 ?>
+		<tr>
+			<th>Perating</th>
+			<th>Komentar</th>
+			<th>Score</th>
+		</tr>
+		<?php while($rating = mysqli_fetch_array($queryRating_mysql)){
+		?>
+		<tr>
+			<td><?php if($rating['NAMAPERATING'])
+					  echo $rating['NAMAPERATING'];
+					  else echo 'Anonim'?></td>
+			<td><?php echo $rating['KOMENTAR']; ?></td>
+			<td><?php echo $rating['SCORE']; ?></td>
+		</tr>
+		<?php }  ?>
+	</table>
+
+
+
 </body>
 </html>

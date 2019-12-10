@@ -91,7 +91,7 @@
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
 							tag.TAG=termasuk.TAG AND
 							fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT AND
-							(tempatwisata.RERATARATING >= $cari OR tempatwisata.RERATARATING <= $cari2)
+							(tempatwisata.RERATARATING >= $cari AND tempatwisata.RERATARATING <= $cari2)
 						GROUP BY tempatwisata.IDTEMPAT
 						ORDER BY tempatwisata.NAMATEMPAT";
 			}

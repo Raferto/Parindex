@@ -81,7 +81,7 @@
 					}
 						
 				}else{
-				echo "<b> 00:00 sampai dengan ".$cari2." pada hari ".$cari3." </b>";
+				echo "<b> Tutup pada ".$cari2." pada hari ".$cari3." </b>";
 				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 				FROM tempatwisata,termasuk,kota,tag,fotolokasi,beroprasi
 				WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
