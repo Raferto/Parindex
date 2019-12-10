@@ -52,7 +52,7 @@
 				if(empty($cari2)){
 					if(empty($cari3)){
 					echo "<b> Semua waktu</b>";
-					$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+					$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 					FROM tempatwisata,termasuk,kota,tag,fotolokasi
 					WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 						termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
@@ -64,7 +64,7 @@
 					else 
 					{
 					echo "Semua waktu pada hari ".$cari3."</b>";
-					$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+					$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 					FROM tempatwisata,termasuk,kota,tag,fotolokasi,beroprasi
 					WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 						termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
@@ -82,7 +82,7 @@
 						
 				}else{
 				echo "<b> Tutup pada ".$cari2." pada hari ".$cari3." </b>";
-				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 				FROM tempatwisata,termasuk,kota,tag,fotolokasi,beroprasi
 				WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 					termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
@@ -99,7 +99,7 @@
 				}
 			}else if(empty($cari2)){
 				echo "<b> dimulai dari ".$cari." pada hari ".$cari3." </b>";
-				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 						FROM tempatwisata,termasuk,kota,tag,fotolokasi,beroprasi
 						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
@@ -116,7 +116,7 @@
 				}
 			else{
 				echo "<b>".$cari." sampai dengan ".$cari2." pada hari ".$cari3." </b>";
-				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 						FROM tempatwisata,termasuk,kota,tag,fotolokasi,beroprasi
 						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND

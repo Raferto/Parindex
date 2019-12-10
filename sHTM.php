@@ -51,7 +51,7 @@
 		echo "<b>Hasil pencarian berdasarkan HTM : </b>";
 			if(empty($cari)){
 				if(empty($cari2)){
-					$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+					$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 					FROM tempatwisata,termasuk,kota,tag,fotolokasi
 					WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 						termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
@@ -61,7 +61,7 @@
 					ORDER BY tempatwisata.NAMATEMPAT";
 				}else{
 				echo "<b> 0 sampai dengan ".$cari2."</b>";
-				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 						FROM tempatwisata,termasuk,kota,tag,fotolokasi
 						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
@@ -73,7 +73,7 @@
 				}
 			}else if(empty($cari2)){
 				echo "<b> dimulai dari ".$cari."</b>";
-				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 						FROM tempatwisata,termasuk,kota,tag,fotolokasi
 						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
@@ -85,7 +85,7 @@
 				}
 			else{
 				echo "<b>".$cari." sampai dengan ".$cari2."</b>";
-				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+				$q = "tempatwisata.IDTEMPAT,SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 				FROM tempatwisata,termasuk,kota,tag,fotolokasi
 				WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 					termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND

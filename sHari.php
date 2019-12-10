@@ -60,7 +60,7 @@
 						ORDER BY tempatwisata.NAMATEMPAT ASC";
 			}
 			else{
-				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 					FROM tempatwisata,termasuk,kota,tag,fotolokasi,beroprasi
 					WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 						termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
@@ -71,7 +71,7 @@
 						SELECT IDJADWAL
 						FROM jadwal
 						WHERE HARI='$cari'
-						)
+			-			)
 					GROUP BY tempatwisata.IDTEMPAT
 						ORDER BY tempatwisata.NAMATEMPAT ASC";
 			}
@@ -101,7 +101,7 @@
 			<td><?php echo $data['Tag']; ?></td>
 			<td><?php echo $data['HTM']; ?></td>
             <td><img src="<?php echo "file/".$data['FOTO']; ?>" style="width:300px;height:200px;"></td>
-			<td><?php echo $data['RERATARATING']; ?></td>
+			<td><?php echo $data['RERATARATING']; ?></td>-
 			<td>
 				<a class="edit" href="detail.php?id=<?php echo $data['IDTEMPAT']; ?>">Detail</a>
 			</td>
