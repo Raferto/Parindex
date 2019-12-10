@@ -40,9 +40,54 @@
 
 	<?php
 	$host = mysqli_connect("localhost","root","","parindex");
-	$cari = $_GET['id'];
-	echo $cari;
+	$id = $_GET['id'];
+	echo $id;
+	$q='SELECT NAMATEMPAT,NAMAKOTA,HTM,LOKASI,NOTELP,WEBSITE,DESKRIPSI,GROUP_CONCAT(DISTINCT tag.TAG) as TAG 
+		FROM tempatwisata,kota,tag,termasuk
+		WHERE tempatwisata.IDTEMPAT='$id' AND
+				tag.TAG=termasuk.TAG AND
+				termasuk.IDTEMPAT=tempatwisata.IDTEMPAT AND
+				kota.IDKOTA =(
+					SELECT IDKOTA
+					FROM tempatwisata
+					WHERE IDTEMPAT='$id')
+		GROUP BY tempatwisata.IDTEMPAT';
+	$q2='SELECT FOTO
+		FROM fotolokasi
+		WHERE fotolokasi.IDTEMPAT='$id'';
+	$q3='SELECT fasilitas.NAMAFASILITAS,fasilitas.BIAYA
+		FROM fasilitas
+		WHERE fasilitas.IDFASILITAS IN(
+			SELECT IDFASILITAS
+			FROM memiliki
+			WHERE IDTEMPAT='$id')';
+	$q4='SELECT jadwal.HARI,jadwal.JAMBUKA,jadwal.JAMTUTUP
+			FROM jadwal
+			WHERE jadwal.IDJADWAL IN
+				(SELECT IDJADWAL
+				FROM beroprasi
+				WHERE IDTEMPAT='$id'
+				)
+			ORDER BY FIELD(Jadwal.HARI,'Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu')';
+	$q5='SELECT rating.NAMAPERATING,rating.KOMENTAR,rating.SCORE
+			FROM rating
+			WHERE rating.IDTEMPAT=$id
+			ORDER BY rating.IDRATING
 
+			SELECT FOTO
+			FROM fotolokasi
+			WHERE fotolokasi.IDTEMPAT='$id'';
+	$q6-'INSERT INTO rating VALUES ('','$id','$namaperating','$komen',$nilai);
+		UPDATE tempatwisata SET JMHRATING = JMHRATING+1 WHERE IDTEMPAT='$id';
+		UPDATE tempatwisata SET RERATARATING = 
+			(SELECT SUM(SCORE)
+			FROM RATING
+			WHERE IDTEMPAT='$id')/JMHRATING
+		WHERE IDTEMPAT='$id';';		
+	$q7='SELECT tempatwisata.NAMATEMPAT,rating.NAMAPERATING,rating.KOMENTAR,rating.SCORE
+		FROM tempatwisata,rating
+		WHERE tempatwisata.IDTEMPAT='$id' AND rating.IDTEMPAT='$id'';
+		
 	?>
 
 </body>
