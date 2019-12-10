@@ -47,7 +47,7 @@
 	<?php
 	if(isset($_POST['cari'])){
 		$cari = $_POST['cari'];
-		echo "<b>Hasil pencarian berdasarkan nama : ".$cari."</b>"; 
+		echo "<b>Hasil pencarian berdasarkan kota : ".$cari."</b>"; 
 			if(empty($cari)){
 				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 						FROM tempatwisata,termasuk,kota,tag,fotolokasi
@@ -65,7 +65,7 @@
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
 							tag.TAG=termasuk.TAG AND
 							fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT AND
-							tempatwisata.NAMATEMPAT LIKE '%$cari%'
+							kota.NAMAKOTA LIKE '%$cari%'
 						GROUP BY tempatwisata.IDTEMPAT
 						ORDER BY tempatwisata.NAMATEMPAT ASC";
 			}

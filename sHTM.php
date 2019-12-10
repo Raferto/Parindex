@@ -47,27 +47,53 @@
 	<?php
 	if(isset($_POST['cari'])){
 		$cari = $_POST['cari'];
-		echo "<b>Hasil pencarian berdasarkan nama : ".$cari."</b>"; 
+		$cari2 = $_POST['cari2'];
+		echo "<b>Hasil pencarian berdasarkan HTM : </b>"; 
 			if(empty($cari)){
-				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
-						FROM tempatwisata,termasuk,kota,tag,fotolokasi
-						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
-							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
-							tag.TAG=termasuk.TAG AND
-							fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT
-						GROUP BY tempatwisata.IDTEMPAT	
-						ORDER BY tempatwisata.NAMATEMPAT ASC";
-			}
-			else{
+				if(empty($cari2)){
+					$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+					FROM tempatwisata,termasuk,kota,tag,fotolokasi
+					WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
+						termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
+						tag.TAG=termasuk.TAG AND
+						fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT
+					GROUP BY tempatwisata.IDTEMPAT
+					ORDER BY tempatwisata.NAMATEMPAT";
+				}else{
+				echo "<b> 0 sampai dengan ".$cari2."</b>";	
 				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 						FROM tempatwisata,termasuk,kota,tag,fotolokasi
 						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
 							tag.TAG=termasuk.TAG AND
 							fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT AND
-							tempatwisata.NAMATEMPAT LIKE '%$cari%'
+							(tempatwisata.HTM <= $cari2)
 						GROUP BY tempatwisata.IDTEMPAT
-						ORDER BY tempatwisata.NAMATEMPAT ASC";
+						ORDER BY tempatwisata.NAMATEMPAT";
+				}		
+			}else if(empty($cari2)){
+				echo "<b> dimulai dari ".$cari."</b>";	
+				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+						FROM tempatwisata,termasuk,kota,tag,fotolokasi
+						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
+							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
+							tag.TAG=termasuk.TAG AND
+							fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT AND
+							(tempatwisata.HTM >= $cari)
+						GROUP BY tempatwisata.IDTEMPAT
+						ORDER BY tempatwisata.NAMATEMPAT";
+				}
+			else{
+				echo "<b>".$cari." sampai dengan ".$cari2."</b>";	
+				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+				FROM tempatwisata,termasuk,kota,tag,fotolokasi
+				WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
+					termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
+					tag.TAG=termasuk.TAG AND
+					fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT AND
+					(tempatwisata.HTM >= $cari AND tempatwisata.HTM <= $cari2)
+				GROUP BY tempatwisata.IDTEMPAT
+				ORDER BY tempatwisata.NAMATEMPAT";
 			}
 			$query_mysql = mysqli_query($host,$q);
 	}

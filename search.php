@@ -76,7 +76,7 @@
 					  </div>
 				</div>
 				
-				<form action="sNama.php" method="post">
+				<form action="sKota.php" method="post">
 					<input style="background-image: url('css/image/1.png'); background-size: 40px; background-repeat: no-repeat;"
 					type="text" name="cari" placeholder="Masukan Nama Kota">
 				</form>
@@ -98,7 +98,7 @@
 					  </div>
 				</div>
 
-				<form action="sNama.php" method="post">
+				<form action="sHTM.php" method="post">
 					<input type="text" name="cari" placeholder="Masukan Harga Minimal">
 					<span style='color:grey; font-size: 50px;'>-</span>
 					<input type="text" name="cari2" placeholder="Masukan Harga maksimal">
