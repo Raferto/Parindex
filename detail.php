@@ -82,6 +82,31 @@
 	$queryRating_mysql = mysqli_query($host,$rating);
 	?>
 
+	<?php
+	$data = mysqli_fetch_array($queryData_mysql);
+
+	echo '<div style="margin:20px 30px 50px;font-size:30px;color:Black;font-weight:bold;">'.$data['NAMATEMPAT'].'</div>';
+	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."Kota : ".$data['NAMAKOTA'].'</div>';
+	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."Tag  : ".$data['TAG'].'</div>';
+	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."HTM  : ".$data['HTM'].'</div>';
+	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."Lokasi  : ".$data['LOKASI'].'</div>';
+	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."No.Telp  : ".$data['NOTELP'].'</div>';
+	if(!$data['WEBSITE'])
+		echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."Website  : "."-".'</div>';
+	else
+		echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."Website  : ".$data['WEBSITE'].'</div>';
+	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."Deskripsi  : ".$data['DESKRIPSI'].'</div>';
+
+	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."Foto Lokasi : ".'</div>';
+	$foto = mysqli_fetch_array($queryFoto_mysql)
+	?><img src="<?php echo "file/".$foto['FOTO']; ?>" style="margin-left: 135px ;width:300px;height:200px;"><?php
+	while($foto = mysqli_fetch_array($queryFoto_mysql)){
+		?>
+		<img src="<?php echo "file/".$foto['FOTO']; ?>" style=";width:300px;height:200px;">
+		<?php
+	}
+	?>
+	<br><br><br>
 	<table border="1" class="table">
 	<?php
 		$nomor = 1;
@@ -101,9 +126,7 @@
 		<?php }  ?>
 	</table>
 
-	<br>
-	<br>
-	<br>
+	<br><br><br>
 	<table border="1" class="table">
 	<?php
 		$nomor = 1;
@@ -147,7 +170,22 @@
 		<?php }  ?>
 	</table>
 
-
+	<?php
+		if(!isset($_POST["score"])){
+	 ?>
+	<form action="detail.php?id=<?php echo $id;?>"  method="post">
+		<table>
+			<td>Nama<input type="text" name="nama" style=" width:100px;"></td>
+			<td>Komentar<input type="text" name="komentar" style="width:458px;"></td>
+			<td>Nilai <input type="int" name="score" style="width:50px; height:40px;"></td>
+			<td><input type="submit" value="Rate" style="color-background:#3F84B1"> </td>
+		</table>
+	</form>
+	<?php }
+		else{
+			
+		}
+	?>
 
 </body>
 </html>
