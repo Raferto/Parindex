@@ -209,15 +209,17 @@
 				</div>
 
 				<form action="sTag.php" method="get">
-					&nbsp&nbsp&nbsp Pilih Tag:
-					<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-					<button name="cari" type="submit" value="monument" style="min-width: 50px;">Monument</button>&nbsp
-					<button name="cari" type="submit" value="safari" style="min-width: 50px;">Safari</button>
-					<button name="cari" type="submit" value="taman hhiburan" style="min-width: 50px;">Taman Hiburan</button>
-					<button name="cari" type="submit" value="pemandian" style="min-width: 50px;">Pemandian</button>
-					<button name="cari" type="submit" value="museum" style="min-width: 50px;">Museum</button>
-					<button name="cari" type="submit" value="kampung wisata" style="min-width: 50px;">Kampung Wisata</button>
-					<button name="cari" type="submit" value="Keraton" style="min-width: 50px;">Keraton</button>
+					<h2>&nbsp&nbsp Pilih Tag: </h2>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<button name="cari" type="submit" value="monument" style=" font-size: 20px; min-width: 50px;">Monument</button>&nbsp
+					<button name="cari" type="submit" value="safari" style=" font-size: 20px; min-width: 50px;">Safari</button>
+					<button name="cari" type="submit" value="taman hhiburan" style=" font-size: 20px; min-width: 50px;">Taman Hiburan</button>
+					<button name="cari" type="submit" value="pemandian" style=" font-size: 20px; min-width: 50px;">Pemandian</button>
+					<button name="cari" type="submit" value="museum" style=" font-size: 20px; min-width: 50px;">Museum</button>
+					<button name="cari" type="submit" value="kampung wisata" style=" font-size: 20px; min-width: 50px;">Kampung Wisata</button>
+					<button name="cari" type="submit" value="keraton" style=" font-size: 20px; min-width: 50px;">Keraton</button>
+					<button name="cari" type="submit" value="wisataalam" style=" font-size: 20px; min-width: 50px;">Wisata Alam</button>
+					<button name="cari" type="submit" value="kuliner" style=" font-size: 20px; min-width: 50px;">Kuliner</button>
 				</form>
 
 

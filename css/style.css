@@ -109,7 +109,7 @@ body {
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
-  padding: 10px 0px;
+  padding: 16px 0px;
   text-decoration: none;
   display: block;
 }
@@ -260,3 +260,29 @@ input[type=submit]:hover {
 }
 
 /*-- form --*/
+
+/*-- banner --*/
+.banner {
+    background: url("image/4.jpg")no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 500px;
+
+}
+.banner h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+    padding: 4em 0 0;
+    text-align: center;
+    color: #ffffff;
+}
+.bann-info h2 {
+    font-size: 26px;
+    color: #34ad00;
+    font-weight: 700;
+}
+
+/*-- /banner --*/

@@ -19,8 +19,8 @@
 	</div>
 	<div id="navbar">
 	  <a href="index.php">Home</a>
-	  <a href="search.php">Search</a>
-	  <a class="active" href="contact.php">Contact</a>
+	  <a class="active" href="search.php">Search</a>
+	  <a href="contact.php">Contact</a>
 	</div>
 	<!--- header ---->
 	<script>
@@ -37,9 +37,13 @@
 		  }
 		}
 	</script>
-	<img src="css/image/5.png" alt="search" style="width:550px;height:300px;margin:-50px 10px; z-index: -10;position: absolute" >
-	<img src="css/image/6.png" alt="search" style="width:550px;height:300px;margin:120px 10px; z-index: -10;position: absolute" >
-	<img src="css/image/7.png" alt="search" style="width:550px;height:300px;margin:290px 10px; z-index: -10;position: absolute" >
+
+	<?php
+	$host = mysqli_connect("localhost","root","","parindex");
+	$cari = $_GET['id'];
+	echo $cari;
+
+	?>
 
 </body>
 
