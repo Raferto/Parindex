@@ -72,7 +72,7 @@ body {
 /*-- BoxImage --*/
 #box1 {
   padding: 15px;
-  background-image: url('image/2.jpg');
+  border: 10px;
   background-repeat: no-repeat;
   background-size: 1000px 7	 00px;
 }
@@ -109,7 +109,7 @@ body {
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
-  padding: 16px 0px;
+  padding: 10px 0px;
   text-decoration: none;
   display: block;
 }
@@ -239,8 +239,6 @@ input[type=time] {
   font-size: 16px;
   background-color: white;
   padding: 12px 20px 12px 50px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
 }
 
 
@@ -260,4 +258,5 @@ input[type=submit]:hover {
   border: 2px solid #3F74B1;
   color: black;
 }
+
 /*-- form --*/

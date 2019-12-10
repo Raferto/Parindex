@@ -19,8 +19,8 @@
 	</div>
 	<div id="navbar">
 	  <a href="index.php">Home</a>
-	  <a href="search.php">Search</a>
-	  <a class="active" href="contact.php">Contact</a>
+	  <a class="active" href="search.php">Search</a>
+	  <a href="contact.php">Contact</a>
 	</div>
 	<!--- header ---->
 	<script>
@@ -31,15 +31,19 @@
 
 		function myFunction() {
 		  if (window.pageYOffset >= sticky) {
-			navbar.classList.add("sticky")
+		    navbar.classList.add("sticky")
 		  } else {
-			navbar.classList.remove("sticky");
+		    navbar.classList.remove("sticky");
 		  }
 		}
+
+
 	</script>
 
-
+	<?php
+	if(isset($_GET['cari'])){
+			echo $_GET['cari'];
+	}
+	?>
 </body>
-
-
 </html>
