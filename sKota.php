@@ -47,7 +47,7 @@
 	<?php
 	if(isset($_POST['cari'])){
 		$cari = $_POST['cari'];
-		echo "<b>Hasil pencarian berdasarkan kota : ".$cari."</b>"; 
+		echo "<b>Hasil pencarian berdasarkan kota : ".$cari."</b>";
 			if(empty($cari)){
 				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 						FROM tempatwisata,termasuk,kota,tag,fotolokasi
@@ -55,7 +55,7 @@
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
 							tag.TAG=termasuk.TAG AND
 							fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT
-						GROUP BY tempatwisata.IDTEMPAT	
+						GROUP BY tempatwisata.IDTEMPAT
 						ORDER BY tempatwisata.NAMATEMPAT ASC";
 			}
 			else{
@@ -81,7 +81,7 @@
 			<th>Nama Tempat</th>
 			<th>Kota</th>
 			<th>Tag</th>
-            <th>HTM</th>	
+            <th>HTM</th>
 			<th>Foto</th>
 			<th>Rating</th>
 		</tr>
@@ -96,21 +96,13 @@
             <td><img src="<?php echo "file/".$data['FOTO']; ?>" style="width:200px;height:200px;"></td>
 			<td><?php echo $data['RERATARATING']; ?></td>
 			<td>
-				<a class="edit" href="detail.php?id=<?php echo $data['IDTEMPAT']; ?>">Detail</a>				
+				<a class="edit" href="detail.php?id=<?php echo $data['IDTEMPAT']; ?>">Detail</a>
 			</td>
 		</tr>
 		<?php } } else { echo "<br>No entry data found"; } ?>
 	</table>
 	<!--- query ---->
 
-
-	<!--- footer ---->
-	<div class="copy-right">
-		<div class="container">
-			<p class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">© 2019 Parindex . All Rights Reserved </p>
-		</div>
-	</div>
-	<!--- footer ---->
 
 	</body>
 	</html>
