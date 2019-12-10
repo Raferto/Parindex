@@ -40,7 +40,20 @@
 	<?php
 	$host = mysqli_connect("localhost","root","","parindex");
 	$id = $_GET['id'];
-	$data="SELECT NAMATEMPAT,NAMAKOTA,HTM,LOKASI,NOTELP,WEBSITE,DESKRIPSI,GROUP_CONCAT(DISTINCT tag.TAG) as TAG
+	if(isset($_POST['score'])){
+		$nama = $_POST['nama'];
+		$komen = $_POST['komentar'];
+		$nilai = $_POST['score'];
+
+		$insert=mysqli_query($host,"INSERT INTO rating VALUES ('','$id','$nama','$komen',$nilai)");
+		mysqli_query($host,"UPDATE tempatwisata SET JMHRATING = JMHRATING+1 WHERE IDTEMPAT='$id'");
+		mysqli_query($host,"UPDATE tempatwisata SET RERATARATING = (SELECT SUM(SCORE)
+													   FROM RATING
+													   WHERE IDTEMPAT='$id')/JMHRATING
+													  WHERE IDTEMPAT='$id' ");
+	}
+
+	$data="SELECT RERATARATING,NAMATEMPAT,NAMAKOTA,HTM,LOKASI,NOTELP,WEBSITE,DESKRIPSI,GROUP_CONCAT(DISTINCT tag.TAG) as TAG
 		FROM tempatwisata,kota,tag,termasuk
 		WHERE tempatwisata.IDTEMPAT='$id' AND
 				tag.TAG=termasuk.TAG AND
@@ -91,6 +104,7 @@
 	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."HTM  : ".$data['HTM'].'</div>';
 	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."Lokasi  : ".$data['LOKASI'].'</div>';
 	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."No.Telp  : ".$data['NOTELP'].'</div>';
+	echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."Rating  : ".$data['RERATARATING'].'</div>';
 	if(!$data['WEBSITE'])
 		echo '<div style="margin:20px 90px;font-size:20px;color:black;">'."Website  : "."-".'</div>';
 	else
@@ -149,29 +163,31 @@
 	<br>
 	<br>
 	<br>
-	<table border="1" class="table">
-	<?php
-		$nomor = 1;
-		 ?>
-		<tr>
-			<th>Perating</th>
-			<th>Komentar</th>
-			<th>Score</th>
-		</tr>
-		<?php while($rating = mysqli_fetch_array($queryRating_mysql)){
-		?>
-		<tr>
-			<td><?php if($rating['NAMAPERATING'])
-					  echo $rating['NAMAPERATING'];
-					  else echo 'Anonim'?></td>
-			<td><?php echo $rating['KOMENTAR']; ?></td>
-			<td><?php echo $rating['SCORE']; ?></td>
-		</tr>
-		<?php }  ?>
-	</table>
-
 	<?php
 		if(!isset($_POST["score"])){
+		?>
+		<table border="1" class="table">
+		<?php
+			$nomor = 1;
+			 ?>
+			<tr>
+				<th>Perating</th>
+				<th>Komentar</th>
+				<th>Score</th>
+			</tr>
+			<?php while($rating = mysqli_fetch_array($queryRating_mysql)){
+			?>
+			<tr>
+				<td><?php if($rating['NAMAPERATING'])
+						  echo $rating['NAMAPERATING'];
+						  else echo 'Anonim'?></td>
+				<td><?php echo $rating['KOMENTAR']; ?></td>
+				<td><?php echo $rating['SCORE']; ?></td>
+			</tr>
+			<?php }  ?>
+		</table>
+		<?php
+
 	 ?>
 	<form action="detail.php?id=<?php echo $id;?>"  method="post">
 		<table>
@@ -183,7 +199,28 @@
 	</form>
 	<?php }
 		else{
-			
+		?>
+		<table border="1" class="table">
+		<?php
+			$nomor = 1;
+			 ?>
+			<tr>
+				<th>Perating</th>
+				<th>Komentar</th>
+				<th>Score</th>
+			</tr>
+			<?php while($rating = mysqli_fetch_array($queryRating_mysql)){
+			?>
+			<tr>
+				<td><?php if($rating['NAMAPERATING'])
+						  echo $rating['NAMAPERATING'];
+						  else echo 'Anonim'?></td>
+				<td><?php echo $rating['KOMENTAR']; ?></td>
+				<td><?php echo $rating['SCORE']; ?></td>
+			</tr>
+			<?php }  ?>
+		</table>
+		<?php
 		}
 	?>
 
