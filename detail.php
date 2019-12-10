@@ -80,7 +80,13 @@
 			WHERE rating.IDTEMPAT=$id
 			ORDER BY rating.IDRATING";
 	$queryRating_mysql = mysqli_query($host,$rating);
-
 	?>
+
+	<?php
+	$data = mysqli_fetch_array($queryData_mysql);
+	?>
+	<?php echo $data['NAMATEMPAT'] ?>
+
+
 </body>
 </html>
