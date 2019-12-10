@@ -121,7 +121,7 @@
 						<a href="search.php?search=tag">Tag</a>
 					  </div>
 				</div>
-				<form action="sNama.php" method="post">
+				<form action="sRating.php" method="post">
 					<input type="text" name="cari" placeholder="Masukan Rating Minimal">
 					<span style='color:grey; font-size: 50px;'>-</span>
 					<input type="text" name="cari2" placeholder="Masukan Rating maksimal">
