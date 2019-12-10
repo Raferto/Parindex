@@ -147,13 +147,13 @@
 				<div class="dropdown2" style="margin: 15px 170px">
 					<button class="dropbtn2">Pilih Hari</button>
 					  <div class="dropdown2-content">
-						<a href="search.php?cari=senin">Senin</a>
-						<a href="search.php?cari=selasa">Selasa</a>
-						<a href="search.php?cari=rabu">Rabu</a>
-						<a href="search.php?cari=kamis">Kamis</a>
-						<a href="search.php?cari=jumat">Jumat</a>
-						<a href="search.php?cari=sabtu">Sabtu</a>
-						<a href="search.php?cari=Minggu">Minggu</a>
+						<a href="sHari.php?cari=senin">Senin</a>
+						<a href="sHari.php?cari=selasa">Selasa</a>
+						<a href="sHari.php?cari=rabu">Rabu</a>
+						<a href="sHari.php?cari=kamis">Kamis</a>
+						<a href="sHari.php?cari=jumat">Jumat</a>
+						<a href="sHari.php?cari=sabtu">Sabtu</a>
+						<a href="sHari.php?cari=Minggu">Minggu</a>
 					  </div>
 				</div>
 
@@ -173,10 +173,21 @@
 						<a href="search.php?search=tag">Tag</a>
 					  </div>
 				</div>
-				<form action="sNama.php" method="post">
-					<input type="time" name="cari" placeholder="Masukan Rating Minimal">
+				<form action="sWaktu.php" method="post">
+					<input type="time" name="cari">
 					<span style='color:grey; font-size: 50px;'>-</span>
-					<input type="time" name="cari2" placeholder="Masukan Rating maksimal">
+					<input type="time" name="cari2">
+					<select	name="cari3" style="width:100px; height:50px; font-size:15px; padding:5px 5px; border:1px solid grey">
+						<option value="">Pilih Hari</option>
+						<option value="senin">Senin</option>
+						<option value="selasa">Selasa</option>
+						<option value="rabu">Rabu</option>
+						<option value="kamis">Kamis</option>
+						<option value="jumat">Jumat</option>
+						<option value="sabtu">Sabtu</option>
+						<option value="minggu">Minggu</option>
+					</select>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 					<input type="submit" value="Cari">
 				</form>
 
@@ -197,11 +208,18 @@
 					  </div>
 				</div>
 
-				<form action="/action_page.php" method="get">
-					&nbsp&nbsp&nbsp Pilih Tag:
-					<br>&nbsp&nbsp&nbsp
-					<button name="subject" type="submit" value="fav_HTML">HTML</button>
-					<button name="subject" type="submit" value="fav_CSS">CSS</button>
+				<form action="sTag.php" method="get">
+					<h2>&nbsp&nbsp Pilih Tag: </h2>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					<button name="cari" type="submit" value="monument" style=" font-size: 20px; min-width: 50px;">Monument</button>&nbsp
+					<button name="cari" type="submit" value="safari" style=" font-size: 20px; min-width: 50px;">Safari</button>
+					<button name="cari" type="submit" value="taman hhiburan" style=" font-size: 20px; min-width: 50px;">Taman Hiburan</button>
+					<button name="cari" type="submit" value="pemandian" style=" font-size: 20px; min-width: 50px;">Pemandian</button>
+					<button name="cari" type="submit" value="museum" style=" font-size: 20px; min-width: 50px;">Museum</button>
+					<button name="cari" type="submit" value="kampung wisata" style=" font-size: 20px; min-width: 50px;">Kampung Wisata</button>
+					<button name="cari" type="submit" value="keraton" style=" font-size: 20px; min-width: 50px;">Keraton</button>
+					<button name="cari" type="submit" value="wisataalam" style=" font-size: 20px; min-width: 50px;">Wisata Alam</button>
+					<button name="cari" type="submit" value="kuliner" style=" font-size: 20px; min-width: 50px;">Kuliner</button>
 				</form>
 
 

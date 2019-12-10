@@ -72,7 +72,7 @@ body {
 /*-- BoxImage --*/
 #box1 {
   padding: 15px;
-  background-image: url('image/2.jpg');
+  border: 10px;
   background-repeat: no-repeat;
   background-size: 1000px 7	 00px;
 }
@@ -277,8 +277,6 @@ input[type=time] {
   font-size: 16px;
   background-color: white;
   padding: 12px 20px 12px 50px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
 }
 
 
@@ -298,4 +296,31 @@ input[type=submit]:hover {
   border: 2px solid #3F74B1;
   color: black;
 }
+
 /*-- form --*/
+
+/*-- banner --*/
+.banner {
+    background: url("image/4.jpg")no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 500px;
+
+}
+.banner h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+    padding: 4em 0 0;
+    text-align: center;
+    color: #ffffff;
+}
+.bann-info h2 {
+    font-size: 26px;
+    color: #34ad00;
+    font-weight: 700;
+}
+
+/*-- /banner --*/

@@ -5,6 +5,11 @@
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+	<script src="js/wow.min.js"></script>
+	<script>
+	new WOW().init();
+	</script>
 </head>
 
 <body>
@@ -37,7 +42,12 @@
 		  }
 		}
 	</script>
-	
+	<div class="banner">
+		<div class="container">
+			<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;"> PARINDEX</h1>
+		</div>
+	</div>
+
 </body>
 
 
