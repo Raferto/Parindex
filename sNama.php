@@ -42,15 +42,64 @@
 	<?php
 	$host = mysqli_connect("localhost","root","","parindex");
 	$cari ="";
-
+	?>
+	<table border="1" class="table">
+	<?php
 	if(isset($_POST['cari'])){
 		$cari = $_POST['cari'];
-		echo $cari;
+		echo "<b>Hasil pencarian : ".$cari."</b>"; 
+			if(empty($cari)){
+				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+						FROM tempatwisata,termasuk,kota,tag,fotolokasi
+						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
+							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
+							tag.TAG=termasuk.TAG AND
+							fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT
+						ORDER BY tempatwisata.NAMATEMPAT ASC";
+			}
+			else{
+				$q = "SELECT tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+						FROM tempatwisata,termasuk,kota,tag,fotolokasi
+						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
+							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
+							tag.TAG=termasuk.TAG AND
+							fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT AND
+							tempatwisata.NAMATEMPAT LIKE '%$cari%'
+						GROUP BY tempatwisata.IDTEMPAT
+						ORDER BY tempatwisata.NAMATEMPAT ASC";
+			}
+			$query_mysql = mysqli_query($host,$q);
 	}
 	else{
 		$query_mysql = mysqli_query($host,"SELECT * FROM user")or die(mysql_error());
 	}
-	?>
+		$nomor = 1;
+		if(mysqli_num_rows($query_mysql) > 0){ ?>
+		<tr>
+			<th>No</th>
+			<th>Nama Tempat</th>
+			<th>Kota</th>
+			<th>Tag</th>
+            <th>HTM</th>	
+			<th>Foto</th>
+			<th>Rating</th>
+		</tr>
+		<?php while($data = mysqli_fetch_array($query_mysql)){
+		?>
+		<tr>
+			<td><?php echo $nomor++; ?></td>
+			<td><?php echo $data['NAMATEMPAT']; ?></td>
+			<td><?php echo $data['NAMAKOTA']; ?></td>
+			<td><?php echo $data['Tag']; ?></td>
+			<td><?php echo $data['HTM']; ?></td>
+            <td><img src="<?php echo "file/".$data['FOTO']; ?>" style="width:200px;height:200px;"></td>
+			<td><?php echo $data['RERATARATING']; ?></td>
+			<td>
+				<a class="edit" href="detail.php?id=<?php echo $data['IDTEMPAT']; ?>">Detail</a>				
+			</td>
+		</tr>
+		<?php } } else { echo "<br>No entry data found"; } ?>
+	</table>
 	<!--- query ---->
 
 
