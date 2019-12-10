@@ -210,6 +210,44 @@ body {
 }
 /*-- text --*/
 
+table{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	margin-left:10%;
+	margin-right:10%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+td{
+	border: 1.5px solid #3F84B1;
+	padding: 20px;
+}
+
+th
+{
+  border: 1px solid #ddd;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+tr:hover {background-color: #c4e1f5;}
+th {
+  letter-spacing: 1px;
+}
+
+td {
+  letter-spacing: 0.5px;
+}
+tfoot th {
+  text-align: right;
+}
+
+
+
+/*-- table --*/
 /*-- form --*/
 input[type=text] {
   width: 300px;

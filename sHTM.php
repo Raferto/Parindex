@@ -110,6 +110,7 @@
             <th>HTM</th>
 			<th>Foto</th>
 			<th>Rating</th>
+			<th></th>
 		</tr>
 		<?php while($data = mysqli_fetch_array($query_mysql)){
 		?>
@@ -119,7 +120,7 @@
 			<td><?php echo $data['NAMAKOTA']; ?></td>
 			<td><?php echo $data['Tag']; ?></td>
 			<td><?php echo $data['HTM']; ?></td>
-            <td><img src="<?php echo "file/".$data['FOTO']; ?>" style="width:200px;height:200px;"></td>
+            <td><img src="<?php echo "file/".$data['FOTO']; ?>" style="width:300px;height:200px;"></td>
 			<td><?php echo $data['RERATARATING']; ?></td>
 			<td>
 				<a class="edit" href="detail.php?id=<?php echo $data['IDTEMPAT']; ?>">Detail</a>
