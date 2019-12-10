@@ -81,35 +81,5 @@
 			ORDER BY rating.IDRATING";
 	$queryRating_mysql = mysqli_query($host,$rating);
 	?>
-
-	<?php
-	$data = mysqli_fetch_array($queryData_mysql);
-
-	echo '<div style="margin:20px 30px 50px;font-size:50px;color:Black;font-weight:bold;">'.$data['NAMATEMPAT'].'</div>';
-	echo '<div style="margin:30px 90px;font-size:40px;color:black;">'."Kota : ".$data['NAMAKOTA'].'</div>';
-	echo '<div style="margin:30px 90px;font-size:40px;color:black;">'."Tag  : ".$data['TAG'].'</div>';
-	echo '<div style="margin:30px 90px;font-size:40px;color:black;">'."HTM  : ".$data['HTM'].'</div>';
-	echo '<div style="margin:30px 90px;font-size:40px;color:black;">'."Lokasi  : ".$data['LOKASI'].'</div>';
-	echo '<div style="margin:30px 90px;font-size:40px;color:black;">'."No.Telp  : ".$data['NOTELP'].'</div>';
-	if(!$data['WEBSITE'])
-		echo '<div style="margin:30px 90px;font-size:40px;color:black;">'."Website  : "."-".'</div>';
-	else
-		echo '<div style="margin:30px 90px;font-size:40px;color:black;">'."Website  : ".$data['WEBSITE'].'</div>';
-	echo '<div style="margin:30px 90px;font-size:40px;color:black;">'."Deskripsi  : ".$data['DESKRIPSI'].'</div>';
-
-	echo '<div style="margin:30px 90px;font-size:40px;color:black;">'."Foto Lokasi : ".'</div>';
-	$foto = mysqli_fetch_array($queryFoto_mysql)
-	?><img src="<?php echo "file/".$foto['FOTO']; ?>" style="margin-left: 150px ;width:300px;height:200px;"><?php
-	while($foto = mysqli_fetch_array($queryFoto_mysql)){
-		?>
-		<img src="<?php echo "file/".$foto['FOTO']; ?>" style=";width:300px;height:200px;">
-		<?php
-	}
-
-
-
-	?>
-
-
 </body>
 </html>
