@@ -47,7 +47,7 @@
 		$cari = $_GET['cari'];
 		echo "<b>Hasil pencarian berdasarkan tag : ".$cari."</b>";
 			if(empty($cari)){
-				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 						FROM tempatwisata,termasuk,kota,tag,fotolokasi
 						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
@@ -57,7 +57,7 @@
 						ORDER BY tempatwisata.NAMATEMPAT ASC";
 			}
 			else{
-				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 						FROM tempatwisata,termasuk,kota,tag,fotolokasi
 						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
