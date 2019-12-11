@@ -102,7 +102,7 @@
 			<td><?php echo $data['Tag']; ?></td>
 			<td><?php echo $data['HTM']; ?></td>
             <td><img src="<?php echo "file/".$data['FOTO']; ?>" style="width:300px;height:200px;"></td>
-			<td><?php echo $data['RERATARATING']; ?></td>-
+			<td><?php echo $data['RERATARATING']; ?></td>
 			<td>
 				<a class="edit" href="detail.php?id=<?php echo $data['IDTEMPAT']; ?>">Detail</a>
 			</td>
