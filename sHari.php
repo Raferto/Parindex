@@ -60,7 +60,7 @@
 						ORDER BY tempatwisata.NAMATEMPAT ASC";
 			}
 			else{
-					echo "Semua waktu pada hari ".$cari."</b>";
+					echo "Buka pada hari ".$cari."</b>";
 					$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 					FROM tempatwisata,termasuk,kota,tag,fotolokasi,beroprasi
 					WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
