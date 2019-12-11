@@ -114,6 +114,23 @@
 						GROUP BY tempatwisata.IDTEMPAT
 						ORDER BY tempatwisata.NAMATEMPAT";
 				}
+			else if(empty($cari3)){
+				echo "<b> ".$cari." sampai dengan ".$cari2." pada hari apapun</b>";
+				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+						FROM tempatwisata,termasuk,kota,tag,fotolokasi,beroprasi
+						WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
+							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
+							tag.TAG=termasuk.TAG AND
+							fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT AND
+							beroprasi.IDTEMPAT = tempatwisata.IDTEMPAT AND
+							beroprasi.IDJADWAL IN(
+							SELECT IDJADWAL
+							FROM jadwal
+							WHERE JAMBUKA<='$cari' AND JAMTUTUP>='$cari2'
+							)
+						GROUP BY tempatwisata.IDTEMPAT
+						ORDER BY tempatwisata.NAMATEMPAT"; 
+			}
 			else{
 				echo "<b>".$cari." sampai dengan ".$cari2." pada hari ".$cari3." </b>";
 				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING

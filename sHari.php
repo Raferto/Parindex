@@ -48,7 +48,7 @@
 	<?php
 	if(isset($_GET['cari'])){
 		$cari = $_GET['cari'];
-		echo "<b>Hasil pencarian berdasarkan hari : ".$cari."</b>";
+		echo "<b>Hasil pencarian berdasarkan hari :</b>";
 			if(empty($cari)){
 				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 						FROM tempatwisata,termasuk,kota,tag,fotolokasi
@@ -60,7 +60,8 @@
 						ORDER BY tempatwisata.NAMATEMPAT ASC";
 			}
 			else{
-				$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
+					echo "Semua waktu pada hari ".$cari."</b>";
+					$q = "SELECT tempatwisata.IDTEMPAT,tempatwisata.NAMATEMPAT,kota.NAMAKOTA,GROUP_CONCAT(DISTINCT tag.TAG) as Tag,tempatwisata.HTM,fotolokasi.FOTO,tempatwisata.RERATARATING
 					FROM tempatwisata,termasuk,kota,tag,fotolokasi,beroprasi
 					WHERE kota.IDKOTA = tempatwisata.IDKOTA AND
 						termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
@@ -71,9 +72,9 @@
 						SELECT IDJADWAL
 						FROM jadwal
 						WHERE HARI='$cari'
-			-			)
+						)
 					GROUP BY tempatwisata.IDTEMPAT
-						ORDER BY tempatwisata.NAMATEMPAT ASC";
+					ORDER BY tempatwisata.NAMATEMPAT ASC";
 			}
 			$query_mysql = mysqli_query($host,$q);
 	}
