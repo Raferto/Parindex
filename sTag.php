@@ -63,7 +63,12 @@
 							termasuk.IDTEMPAT = tempatwisata.IDTEMPAT AND
 							tag.TAG=termasuk.TAG AND
 							fotolokasi.IDTEMPAT = tempatwisata.IDTEMPAT AND
-							tag.TAG LIKE '%$cari%'
+							tempatwisata.IDTEMPAT IN(
+								SELECT IDTEMPAT
+								FROM tag,termasuk
+								WHERE termasuk.TAG=tag.TAG AND
+								tag.TAG LIKE '%$cari%'
+							)
 						GROUP BY tempatwisata.IDTEMPAT
 						ORDER BY tempatwisata.NAMATEMPAT ASC";
 			}
